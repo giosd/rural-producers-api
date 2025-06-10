@@ -1,0 +1,68 @@
+POST http://localhost:3000/producers
+Content-Type: application/json
+
+{
+  "document": "123.456.789-00",
+  "name": "João da Silva 2",
+  "farms": [
+    {
+      "name": "Fazenda Boa Terra",
+      "city": "Campinas",
+      "state": "SP",
+      "totalArea": 100,
+      "farmingArea": 60,
+      "vegetationArea": 40,
+      "crops": [
+        {
+          "name": "Soja",
+          "season": "Safra 2023"
+        }
+      ]
+    }
+  ]
+}
+
+#####
+GET http://localhost:3000/producers
+#####
+GET http://localhost:3000/producers/4a60e9cb-43bd-4d16-a7d0-a7fca9100ecd
+#####
+DELETE http://localhost:3000/producers/f8bf596c-bd91-4ce6-9a3f-d8be73d6ee99
+
+### teste com erro para validacao vegetationArea
+
+POST http://localhost:3000/producers
+Content-Type: application/json
+
+{
+  "document": "12345678901",
+  "name": "João Silva 1",
+  "farms": [
+    {
+      "name": "Fazenda Problema",
+      "city": "Ribeirão",
+      "state": "SP",
+      "totalArea": 50,
+      "farmingArea": 30,
+      "vegetationArea": 30,
+      "crops": [
+        {
+          "harvest": "Safra 2025",
+          "culture": "Café"
+        }
+      ]
+    }
+  ]
+}
+
+#####
+GET http://localhost:3000/dashboard/farms-count
+#####
+GET http://localhost:3000/dashboard/total-area
+#####
+GET http://localhost:3000/dashboard/by-state
+#####
+GET http://localhost:3000/dashboard/by-culture
+#####
+GET http://localhost:3000/dashboard/land-usage
+#####
