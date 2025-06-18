@@ -7,11 +7,11 @@ import { DashboardModule } from './dashboard/dashboard.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'user',
-      password: 'password',
-      database: 'rural',
+      host: process.env.DB_HOST || 'localhost',
+      port: Number(process.env.DB_PORT) || 5432,
+      username: process.env.DB_USER || 'user',
+      password: process.env.DB_PASS || 'password',
+      database: process.env.DB_NAME || 'rural',
       autoLoadEntities: true,
       synchronize: true, // apenas para desenvolvimento
     }),
