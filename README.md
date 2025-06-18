@@ -23,30 +23,24 @@ API REST para gerenciamento de produtores rurais, suas fazendas e culturas, com 
 
 ---
 
-## ▶️ Como rodar
+## ▶️ Como rodar com Docker
 
-```bash
+````bash
 # Clonar o projeto
 git clone https://github.com/giosd/rural-producers-api.git
 cd rural-producers-api
 
-# Instalar dependências
-npm install
+# Subir a aplicação e o banco
+docker-compose up --build
 
-# Subir somente o banco de dados
-docker-compose up -d
-
-# Em outro terminal, iniciar a aplicação
-npm run start:dev
-
-A API estará disponível em:  
+A API estará disponível em:
 👉 http://localhost:3000
 
 ---
 
 ## 📚 Documentação Swagger
 
-Acesse:  
+Acesse:
 👉 [`http://localhost:3000/api`](http://localhost:3000/api)
 
 ---
@@ -59,7 +53,7 @@ npm run test
 
 # Cobertura
 npm run test:cov
-```
+````
 
 ---
 
